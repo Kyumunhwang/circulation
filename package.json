@@ -1,0 +1,21 @@
+{
+  "name": "circulation-simulation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "중학교 2학년 과학 [9과11-02] 혈액의 순환 경로와 기능 인터랙티브 시뮬레이션",
+  "type": "module",
+  "scripts": {
+    "dev:circulation-sim": "vite --port 3412 --strictPort",
+    "build": "vite build",
+    "preview:circulation-sim": "vite preview --port 3413 --strictPort"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11",
+    "vite-plugin-singlefile": "^2.0.3"
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "meta": {
+    "title": "중학교 2학년 과학 [순환] 인터랙티브 시뮬레이션",
+    "unit": "동물과 에너지 - 혈액의 순환",
+    "achievementStandard": "[9과11-02]",
+    "achievementDescription": "혈액의 순환 경로를 폐순환과 체순환으로 구분하여 설명하고, 각 순환 과정에서 일어나는 물질 교환과 혈액의 상태 변화를 이해한다.",
+    "gradeLevel": "중학교 2학년",
+    "colors": {
+      "arterial": "#E63946",
+      "venous": "#457B9D",
+      "exchange": "#7B5EA7",
+      "valve": "#F4A261"
+    },
+    "stepOrder": [
+      "right_ventricle",
+      "pulmonary_valve",
+      "pulmonary_artery",
+      "pulmonary_capillaries",
+      "pulmonary_vein",
+      "left_atrium",
+      "bicuspid_valve",
+      "left_ventricle",
+      "aortic_valve",
+      "aorta",
+      "systemic_capillaries",
+      "vena_cava",
+      "right_atrium",
+      "tricuspid_valve"
+    ],
+    "loops": {
+      "pulmonary": {
+        "nameKo": "폐순환",
+        "nameEn": "Pulmonary Circulation",
+        "summary": "우심실 → 폐동맥 → 폐의 모세혈관(기체 교환) → 폐정맥 → 좌심방",
+        "steps": [
+          "right_ventricle",
+          "pulmonary_valve",
+          "pulmonary_artery",
+          "pulmonary_capillaries",
+          "pulmonary_vein",
+          "left_atrium"
+        ]
+      },
+      "systemic": {
+        "nameKo": "체순환 (온몸 순환)",
+        "nameEn": "Systemic Circulation",
+        "summary": "좌심실 → 대동맥 → 온몸의 모세혈관(물질 교환) → 대정맥 → 우심방",
+        "steps": [
+          "left_ventricle",
+          "aortic_valve",
+          "aorta",
+          "systemic_capillaries",
+          "vena_cava",
+          "right_atrium"
+        ]
+      }
+    }
+  },
+  "nodes": {
+    "right_atrium": {
+      "id": "right_atrium",
+      "nameKo": "우심방",
+      "nameEn": "Right Atrium",
+      "category": "chamber",
+      "loop": "heart",
+      "circulationTags": ["systemic", "pulmonary"],
+      "bloodType": "venous",
+      "bloodTypeLabel": "정맥혈",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "대정맥 → 우심방 → (삼첨판) → 우심실",
+      "wallThicknessNote": "심방은 바로 아래의 심실로만 혈액을 보내므로 심실에 비해 근육벽이 얇습니다.",
+      "studentSummary": "온몸을 돌며 산소를 전달하고 이산화탄소를 받아온 정맥혈이 대정맥을 통해 가장 먼저 들어오는 심장의 방입니다.",
+      "teacherExplanation": "체순환의 도착점이자 폐순환으로 가기 위한 준비 단계입니다. 대정맥에서 유입된 정맥혈을 받아 심방 수축 시 삼첨판을 통해 우심실로 내려보냅니다. 해부학 모식도에서는 마주 본 기준 왼쪽 상단에 위치합니다.",
+      "exchangePrinciple": "물질 교환은 일어나지 않으며, 온몸에서 돌아온 정맥혈을 모아 심실로 전달하는 수용실 역할을 합니다.",
+      "classroomTip": "우심방으로 들어오는 혈액은 산소가 많을까요, 적을까요? 그 이유는 무엇인가요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "tricuspid_valve": {
+      "id": "tricuspid_valve",
+      "nameKo": "삼첨판",
+      "nameEn": "Tricuspid Valve",
+      "category": "valve",
+      "loop": "heart",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "valve",
+      "passingBloodType": "venous",
+      "bloodTypeLabel": "판막 (정맥혈 통과)",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "우심방 → (삼첨판 통과) → 우심실 (역류 방지)",
+      "wallThicknessNote": "세 개의 얇고 질긴 판막 첨판으로 이루어져 있어 압력 차이에 따라 한쪽으로만 열립니다.",
+      "studentSummary": "우심방과 우심실 사이에 있는 문으로, 혈액이 우심실에서 우심방으로 거꾸로 흐르지 않도록 막아줍니다.",
+      "teacherExplanation": "심방 수축기 및 심실 이완기에는 열려 혈액이 우심방에서 우심실로 내려가게 하고, 심실 수축기에는 강하게 닫혀 정맥혈이 우심방으로 역류하는 것을 차단합니다.",
+      "exchangePrinciple": "압력 차이에 의한 기계적 개폐 원리로 혈액의 일방향 흐름(심방 → 심실)을 보장합니다.",
+      "classroomTip": "만약 심실이 강하게 수축할 때 삼첨판이 제대로 닫히지 않으면 어떤 일이 벌어질까요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "right_ventricle": {
+      "id": "right_ventricle",
+      "nameKo": "우심실",
+      "nameEn": "Right Ventricle",
+      "category": "chamber",
+      "loop": "heart",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "venous",
+      "bloodTypeLabel": "정맥혈",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "우심방 → (삼첨판) → 우심실 → (폐동맥 판막) → 폐동맥",
+      "wallThicknessNote": "심방보다는 근육벽이 두껍지만, 심장 바로 옆에 있는 폐까지만 혈액을 보내므로 좌심실보다는 얇습니다.",
+      "studentSummary": "폐순환이 시작되는 곳으로, 수축하여 정맥혈을 폐동맥을 통해 폐로 내보냅니다.",
+      "teacherExplanation": "우심방에서 받은 정맥혈을 폐동맥 판막을 열어 폐동맥으로 밀어냅니다. 폐순환의 이동 거리가 체순환보다 짧고 폐 혈관의 저항이 낮아, 좌심실의 약 1/3 수준의 벽 두께와 수축 압력을 가집니다.",
+      "exchangePrinciple": "강한 펌프 작용으로 정맥혈에 추진력을 부여하여 폐의 모세혈관까지 이동시킵니다.",
+      "classroomTip": "우심실과 좌심실의 근육벽 두께가 다른 이유를 혈액이 가야 하는 목적지와 연결해 설명해 봅시다.",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "pulmonary_valve": {
+      "id": "pulmonary_valve",
+      "nameKo": "폐동맥 판막 (반월판)",
+      "nameEn": "Pulmonary Valve (Semilunar Valve)",
+      "category": "valve",
+      "loop": "heart",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "valve",
+      "passingBloodType": "venous",
+      "bloodTypeLabel": "판막 (정맥혈 통과)",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "우심실 → (폐동맥 판막 통과) → 폐동맥 (역류 방지)",
+      "wallThicknessNote": "반달 모양의 3개 주머니 구조(반월판)로 되어 있어 역류하려는 혈액이 차오르면 자동으로 맞물려 닫힙니다.",
+      "studentSummary": "우심실과 폐동맥 사이에 있는 반월판으로, 폐동맥으로 나간 혈액이 우심실로 되돌아오지 못하게 막습니다.",
+      "teacherExplanation": "심실이 수축할 때 열려 정맥혈이 폐동맥으로 분출되도록 하고, 심실이 이완하여 압력이 낮아지면 즉시 닫혀 폐동맥의 혈액이 우심실로 역류하는 것을 막습니다.",
+      "exchangePrinciple": "반월판 구조는 심실 이완기의 역압력을 이용해 혈액의 역류를 차단합니다.",
+      "classroomTip": "심실이 수축할 때 닫히는 판막과 열리는 판막을 각각 구분해 볼까요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "pulmonary_artery": {
+      "id": "pulmonary_artery",
+      "nameKo": "폐동맥",
+      "nameEn": "Pulmonary Artery",
+      "category": "artery",
+      "loop": "pulmonary",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "venous",
+      "bloodTypeLabel": "정맥혈",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "우심실 → (폐동맥 판막) → 폐동맥 → 폐의 모세혈관",
+      "wallThicknessNote": "심장(우심실)에서 나가는 혈관이므로 탄력성과 근육층이 발달한 동맥 구조를 가지지만, 대동맥보다는 벽이 얇습니다.",
+      "studentSummary": "우심실에서 나와 폐로 가는 혈관입니다. 이름은 '동맥'이지만 산소가 적은 '정맥혈'이 흐른다는 점이 가장 중요합니다!",
+      "teacherExplanation": "중2 과학 순환 단원에서 가장 빈출되는 핵심 오개념 교정 지점입니다. '동맥'은 심장에서 나가는 혈관이라는 구조·방향 기준의 명칭이고, 폐동맥 속 혈액은 아직 폐에서 산소를 받기 전이므로 산소가 적은 정맥혈입니다.",
+      "exchangePrinciple": "혈관벽이 두꺼워 물질 교환은 일어나지 않으며, 정맥혈을 폐의 모세혈관으로 신속히 수송합니다.",
+      "classroomTip": "왜 폐동맥에는 '동맥'이라는 이름이 붙었는데 '정맥혈'이 흐를까요?",
+      "galleryIllustrationId": "vessel_comparison"
+    },
+    "pulmonary_capillaries": {
+      "id": "pulmonary_capillaries",
+      "nameKo": "폐의 모세혈관",
+      "nameEn": "Pulmonary Capillaries",
+      "category": "capillary",
+      "loop": "pulmonary",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "gas_exchange",
+      "bloodTypeLabel": "기체 교환 (정맥혈 → 동맥혈)",
+      "color": "#7B5EA7",
+      "gradient": ["#457B9D", "#E63946"],
+      "oxygenSaturation": "75% → 98%",
+      "directionText": "폐동맥 → 폐의 모세혈관(기체 교환) → 폐정맥",
+      "wallThicknessNote": "혈관벽이 한 겹의 얇은 세포층으로 되어 있고 적혈구가 한 줄로 천천히 통과하여 기체 교환 효율이 극대화됩니다.",
+      "studentSummary": "폐포를 감싸고 있는 아주 가는 혈관으로, 산소(O₂)를 흡수하고 이산화탄소(CO₂)를 내보내 정맥혈이 동맥혈로 변하는 곳입니다.",
+      "teacherExplanation": "폐순환의 핵심 목적지입니다. 폐포 내 높은 산소 농도와 모세혈관 내 높은 이산화탄소 농도 차이로 인해 확산이 일어납니다. 적혈구 속 헤모글로빈이 산소와 결합하면서 혈액 색깔이 암적색에서 선홍색으로 바뀝니다.",
+      "exchangePrinciple": "농도 차이에 의한 기체 확산: 폐포 → 혈액(O₂ 흡수), 혈액 → 폐포(CO₂ 방출).",
+      "classroomTip": "폐의 모세혈관을 지나기 전과 후, 적혈구의 색깔과 기체 성분은 어떻게 달라질까요?",
+      "galleryIllustrationId": "alveolus_gas_exchange"
+    },
+    "pulmonary_vein": {
+      "id": "pulmonary_vein",
+      "nameKo": "폐정맥",
+      "nameEn": "Pulmonary Vein",
+      "category": "vein",
+      "loop": "pulmonary",
+      "circulationTags": ["pulmonary"],
+      "bloodType": "arterial",
+      "bloodTypeLabel": "동맥혈",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "폐의 모세혈관 → 폐정맥 → 좌심방",
+      "wallThicknessNote": "심장(좌심방)으로 들어오는 정맥이므로 동맥에 비해 혈관벽이 얇고 혈압이 낮습니다.",
+      "studentSummary": "폐에서 산소를 가득 채운 혈액이 심장(좌심방)으로 돌아오는 혈관입니다. 이름은 '정맥'이지만 산소가 풍부한 '동맥혈'이 흐릅니다!",
+      "teacherExplanation": "폐동맥과 함께 '혈관 이름 ≠ 혈액 종류'를 보여주는 대표적인 혈관입니다. 폐의 모세혈관에서 산소를 공급받은 선홍색 동맥혈을 좌심방으로 운반하여 체순환을 준비시킵니다.",
+      "exchangePrinciple": "물질 교환 없이 산소 포화도가 높은 동맥혈을 심장의 좌심방으로 수송합니다.",
+      "classroomTip": "체내에서 동맥혈이 흐르는 정맥은 무엇일까요? 폐동맥과 비교해 말해 봅시다.",
+      "galleryIllustrationId": "rbc_oxygen"
+    },
+    "left_atrium": {
+      "id": "left_atrium",
+      "nameKo": "좌심방",
+      "nameEn": "Left Atrium",
+      "category": "chamber",
+      "loop": "heart",
+      "circulationTags": ["pulmonary", "systemic"],
+      "bloodType": "arterial",
+      "bloodTypeLabel": "동맥혈",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "폐정맥 → 좌심방 → (이첨판) → 좌심실",
+      "wallThicknessNote": "바로 아래의 좌심실로만 혈액을 내려보내므로 심실에 비해 근육벽이 얇습니다.",
+      "studentSummary": "폐순환을 마치고 산소가 풍부해진 동맥혈이 폐정맥을 통해 들어오는 심장의 방입니다.",
+      "teacherExplanation": "폐순환의 종착점이자 체순환의 대기실입니다. 폐정맥으로부터 들어온 선홍색 동맥혈을 받아 심방 수축 시 이첨판(승모판)을 열어 좌심실로 보냅니다. 모식도에서는 마주 본 기준 오른쪽 상단입니다.",
+      "exchangePrinciple": "물질 교환은 없으며, 산소가 풍부한 동맥혈을 받아 좌심실로 전달합니다.",
+      "classroomTip": "우심방과 좌심방 중 어느 곳에 선홍색 동맥혈이 들어올까요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "bicuspid_valve": {
+      "id": "bicuspid_valve",
+      "nameKo": "이첨판 (승모판)",
+      "nameEn": "Bicuspid Valve (Mitral Valve)",
+      "category": "valve",
+      "loop": "heart",
+      "circulationTags": ["systemic"],
+      "bloodType": "valve",
+      "passingBloodType": "arterial",
+      "bloodTypeLabel": "판막 (동맥혈 통과)",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "좌심방 → (이첨판 통과) → 좌심실 (역류 방지)",
+      "wallThicknessNote": "두 개의 튼튼한 판막 첨판으로 구성되어 좌심실의 매우 높은 수축 압력을 견뎌야 합니다.",
+      "studentSummary": "좌심방과 좌심실 사이에 있는 문으로, 좌심실이 강하게 수축할 때 혈액이 좌심방으로 역류하지 못하게 막습니다.",
+      "teacherExplanation": "좌심실은 온몸으로 혈액을 보내기 위해 심장 중 가장 큰 압력을 만들어내므로, 이첨판(승모판)은 혈액이 좌심방으로 거꾸로 솟구치지 않도록 단단히 닫혀야 합니다.",
+      "exchangePrinciple": "압력 차이에 따라 개폐되어 동맥혈이 좌심방에서 좌심실 방향으로만 흐르도록 유지합니다.",
+      "classroomTip": "좌심방과 좌심실 사이의 이첨판은 심장의 어느 시기에 닫혀야 할까요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "left_ventricle": {
+      "id": "left_ventricle",
+      "nameKo": "좌심실",
+      "nameEn": "Left Ventricle",
+      "category": "chamber",
+      "loop": "heart",
+      "circulationTags": ["systemic"],
+      "bloodType": "arterial",
+      "bloodTypeLabel": "동맥혈",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "좌심방 → (이첨판) → 좌심실 → (대동맥 판막) → 대동맥",
+      "wallThicknessNote": "심장의 4개 방 중 근육벽이 가장 두껍습니다. 머리끝부터 발끝까지 온몸의 모든 조직으로 혈액을 강하게 밀어내야 하므로 가장 큰 펌프 힘과 높은 혈압을 만들어냅니다.",
+      "studentSummary": "체순환이 시작되는 곳으로, 심장에서 가장 두꺼운 근육벽의 힘으로 온몸으로 동맥혈을 힘차게 내보냅니다.",
+      "teacherExplanation": "좌심실은 대동맥을 통해 온몸의 모세혈관까지 혈액을 공급해야 하므로 우심실보다 약 3배 이상 두꺼운 근육벽을 가집니다. 수축 시 대동맥 판막이 열리고 이첨판은 닫혀 혈액이 대동맥으로만 분출됩니다.",
+      "exchangePrinciple": "강력한 심실 수축을 통해 온몸 순환에 필요한 높은 혈압(추진력)을 생성합니다.",
+      "classroomTip": "심장의 4방 중 좌심실의 벽이 유독 두꺼운 까닭을 몸의 크기 및 혈액 이동 거리와 연관 지어 발표해 봅시다.",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "aortic_valve": {
+      "id": "aortic_valve",
+      "nameKo": "대동맥 판막 (반월판)",
+      "nameEn": "Aortic Valve (Semilunar Valve)",
+      "category": "valve",
+      "loop": "heart",
+      "circulationTags": ["systemic"],
+      "bloodType": "valve",
+      "passingBloodType": "arterial",
+      "bloodTypeLabel": "판막 (동맥혈 통과)",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "좌심실 → (대동맥 판막 통과) → 대동맥 (역류 방지)",
+      "wallThicknessNote": "세 개의 반달 모양 주머니(반월판)가 대동맥의 높은 혈압에 의해 닫히며 역류를 완벽히 차단합니다.",
+      "studentSummary": "좌심실과 대동맥 사이에 있는 반월판으로, 대동맥으로 나간 혈액이 좌심실로 다시 돌아오지 못하게 막아줍니다.",
+      "teacherExplanation": "좌심실이 수축할 때 열려 동맥혈이 대동맥으로 힘차게 나가게 하고, 좌심실이 이완할 때는 대동맥의 높은 탄성 압력에 의해 즉시 닫혀 역류를 방지합니다.",
+      "exchangePrinciple": "대동맥과 좌심실 사이의 압력 역전 시 반월판 주머니가 팽창하여 역류를 막습니다.",
+      "classroomTip": "심실이 이완할 때 대동맥의 혈액이 다시 좌심실로 들어가지 않는 이유는 무엇일까요?",
+      "galleryIllustrationId": "heart_cross_section"
+    },
+    "aorta": {
+      "id": "aorta",
+      "nameKo": "대동맥",
+      "nameEn": "Aorta",
+      "category": "artery",
+      "loop": "systemic",
+      "circulationTags": ["systemic"],
+      "bloodType": "arterial",
+      "bloodTypeLabel": "동맥혈",
+      "color": "#E63946",
+      "oxygenSaturation": "98%",
+      "directionText": "좌심실 → (대동맥 판막) → 대동맥 → 온몸의 모세혈관",
+      "wallThicknessNote": "좌심실에서 직접 나오는 높은 혈압을 견뎌야 하므로 혈관 중 가장 벽이 두껍고 탄력성이 뛰어납니다.",
+      "studentSummary": "좌심실에서 나온 산소가 풍부한 동맥혈을 온몸의 여러 장기와 조직으로 나누어 보내는 가장 크고 탄력 있는 혈관입니다.",
+      "teacherExplanation": "높은 혈압에 의해 팽창했다가 수축하는 탄성력으로 혈액을 온몸의 말단까지 지속적으로 밀어줍니다. 판막은 없으며(출구인 대동맥 판막만 심장 경계에 존재), 두꺼운 근육층과 탄력 섬유가 특징입니다.",
+      "exchangePrinciple": "높은 압력과 빠른 혈류 속도로 산소와 영양소가 풍부한 동맥혈을 온몸으로 수송합니다.",
+      "classroomTip": "손목이나 목에서 맥박이 느껴지는 혈관은 동맥일까요, 정맥일까요? 그 이유는 무엇인가요?",
+      "galleryIllustrationId": "vessel_comparison"
+    },
+    "systemic_capillaries": {
+      "id": "systemic_capillaries",
+      "nameKo": "온몸의 모세혈관",
+      "nameEn": "Systemic Capillaries",
+      "category": "capillary",
+      "loop": "systemic",
+      "circulationTags": ["systemic"],
+      "bloodType": "material_exchange",
+      "bloodTypeLabel": "물질 교환 (동맥혈 → 정맥혈)",
+      "color": "#7B5EA7",
+      "gradient": ["#E63946", "#457B9D"],
+      "oxygenSaturation": "98% → 75%",
+      "directionText": "대동맥 → 온몸의 모세혈관(물질 교환) → 대정맥",
+      "wallThicknessNote": "한 겹의 세포층으로 된 매우 얇은 벽과 넓은 총 단면적 덕분에 혈류 속도가 가장 느려 물질 교환에 최적화되어 있습니다.",
+      "studentSummary": "온몸의 조직세포 사이를 지나며 세포에게 산소(O₂)와 영양소를 주고, 세포가 만든 이산화탄소(CO₂)와 노폐물을 받아옵니다.",
+      "teacherExplanation": "체순환의 핵심 기능이 일어나는 곳입니다. 조직세포의 세포 호흡에 필요한 산소와 영양소를 공급하고, 노폐물과 이산화탄소를 회수합니다. 산소를 잃은 혈액은 선홍색에서 암적색 정맥혈로 변합니다.",
+      "exchangePrinciple": "농도 차이에 의한 확산 및 물질 교환: 혈액 → 조직세포(O₂, 영양소), 조직세포 → 혈액(CO₂, 노폐물).",
+      "classroomTip": "모세혈관에서 혈액이 흐르는 속도가 매우 느린 것이 우리 몸에 어떤 장점을 줄까요?",
+      "galleryIllustrationId": "tissue_material_exchange"
+    },
+    "vena_cava": {
+      "id": "vena_cava",
+      "nameKo": "대정맥",
+      "nameEn": "Vena Cava",
+      "category": "vein",
+      "loop": "systemic",
+      "circulationTags": ["systemic"],
+      "bloodType": "venous",
+      "bloodTypeLabel": "정맥혈",
+      "color": "#457B9D",
+      "oxygenSaturation": "75%",
+      "directionText": "온몸의 모세혈관 → 대정맥 → 우심방",
+      "wallThicknessNote": "모세혈관을 지나며 혈압이 매우 낮아졌기 때문에 동맥보다 혈관벽이 얇고 탄력이 적으며, 혈액 역류를 막는 정맥 판막이 있습니다.",
+      "studentSummary": "온몸을 돌고 온 산소가 적은 정맥혈을 모아 심장의 우심방으로 되돌려 보내는 큰 정맥입니다.",
+      "teacherExplanation": "상대정맥(머리·팔)과 하대정맥(몸통·다리)이 모여 우심방으로 들어옵니다. 혈압이 매우 낮기 때문에 주변 골격근의 수축과 혈관 내 판막의 도움으로 혈액이 거꾸로 흐르지 않고 심장까지 올라옵니다.",
+      "exchangePrinciple": "물질 교환은 없으며, 이산화탄소와 노폐물이 포함된 정맥혈을 심장(우심방)으로 귀환시킵니다.",
+      "classroomTip": "동맥과 달리 정맥(대정맥 등) 안쪽에 군데군데 판막이 있는 까닭은 무엇일까요?",
+      "galleryIllustrationId": "vessel_comparison"
+    }
+  },
+  "misconceptions": {
+    "title": "핵심 오개념 바로잡기: 혈관 이름 vs 혈액의 종류",
+    "subtitle": "학생들이 가장 많이 헷갈리는 '동맥 ≠ 동맥혈', '정맥 ≠ 정맥혈' 구분 원리",
+    "coreRule": "혈관의 이름(동맥/정맥)은 '심장 기준 혈액 이동 방향'으로 정하고, 혈액의 종류(동맥혈/정맥혈)는 '산소 함량'으로 구분합니다.",
+    "comparisons": [
+      {
+        "id": "artery_vs_arterial_blood",
+        "title": "동맥 vs 동맥혈",
+        "conceptA": {
+          "name": "동맥 (Artery)",
+          "category": "혈관의 종류",
+          "criterion": "혈액의 이동 방향 (심장 → 밖)",
+          "definition": "심실의 수축으로 심장에서 몸 밖(폐 또는 온몸)으로 나가는 혈액이 흐르는 혈관",
+          "features": [
+            "높은 혈압을 견디기 위해 혈관벽이 두껍고 탄력성이 큼",
+            "판막이 혈관 내부에 존재하지 않음 (심장 출구에만 반월판 존재)",
+            "종류: 대동맥, 폐동맥"
+          ],
+          "badgeColor": "#1D3557"
+        },
+        "conceptB": {
+          "name": "동맥혈 (Arterial Blood)",
+          "category": "혈액의 상태",
+          "criterion": "산소(O₂) 함량 (높음)",
+          "definition": "폐에서 산소를 충분히 받아 산소 포화도가 높고 이산화탄소가 적은 혈액",
+          "features": [
+            "산소와 결합한 헤모글로빈 때문에 밝은 선홍색을 띰",
+            "산소 포화도 약 95~98%",
+            "흐르는 곳: 폐정맥, 좌심방, 좌심실, 대동맥"
+          ],
+          "badgeColor": "#E63946"
+        },
+        "keyDifference": "동맥은 '도로(심장에서 나가는 길)', 동맥혈은 '실려 있는 화물(산소가 가득한 혈액)'입니다. 따라서 동맥이라고 해서 항상 동맥혈이 흐르는 것은 아닙니다!",
+        "commonTrap": "폐동맥은 심장(우심실)에서 나가므로 '동맥'이지만, 폐에서 산소를 받기 전이므로 '정맥혈'이 흐릅니다."
+      },
+      {
+        "id": "vein_vs_venous_blood",
+        "title": "정맥 vs 정맥혈",
+        "conceptA": {
+          "name": "정맥 (Vein)",
+          "category": "혈관의 종류",
+          "criterion": "혈액의 이동 방향 (밖 → 심장)",
+          "definition": "온몸이나 폐를 거쳐 다시 심방으로 들어오는 혈액이 흐르는 혈관",
+          "features": [
+            "혈압이 낮아 혈관벽이 동맥보다 얇고 탄력이 작음",
+            "혈액 역류를 막기 위해 군데군데 판막이 있음",
+            "종류: 대정맥, 폐정맥"
+          ],
+          "badgeColor": "#2A6F97"
+        },
+        "conceptB": {
+          "name": "정맥혈 (Venous Blood)",
+          "category": "혈액의 상태",
+          "criterion": "산소(O₂) 함량 (낮음)",
+          "definition": "조직세포에 산소를 전달하여 산소가 적고 이산화탄소 함량이 상대적으로 높은 혈액",
+          "features": [
+            "산소가 적은 헤모글로빈 때문에 어두운 암적색(푸른빛으로 시각화)을 띰",
+            "산소 포화도 약 70~75%",
+            "흐르는 곳: 대정맥, 우심방, 우심실, 폐동맥"
+          ],
+          "badgeColor": "#457B9D"
+        },
+        "keyDifference": "정맥은 '심장으로 돌아오는 도로', 정맥혈은 '산소를 다 쓰고 남은 혈액'입니다. 따라서 정맥에도 산소가 많은 동맥혈이 흐를 수 있습니다!",
+        "commonTrap": "폐정맥은 심장(좌심방)으로 들어오므로 '정맥'이지만, 폐에서 막 산소를 받아온 직후이므로 '동맥혈'이 흐릅니다."
+      }
+    ],
+    "spotlightException": {
+      "title": "최고 빈출 주의 구간: 폐동맥(정맥혈) vs 폐정맥(동맥혈)",
+      "analogy": "비유: '공항행 고속도로(혈관 이름)'를 탄다고 해서 무조건 '비행기 화물(혈액 종류)'이 실려 있는 것은 아닙니다. 출발 전 빈 트럭(정맥혈)이 폐(공장)로 갈 수도, 폐에서 물건을 싣고 돌아오는 트럭(동맥혈)이 심장으로 들어올 수도 있습니다.",
+      "items": [
+        {
+          "nodeId": "pulmonary_artery",
+          "vesselName": "폐동맥",
+          "vesselType": "동맥 (우심실 → 폐)",
+          "bloodType": "정맥혈 (산소 적음)",
+          "color": "#457B9D",
+          "oxygenSaturation": "75%",
+          "reason": "우심실에서 나가는 혈관이라 '폐동맥'이지만, 아직 폐포에서 산소를 공급받기 전이므로 정맥혈이 흐릅니다."
+        },
+        {
+          "nodeId": "pulmonary_vein",
+          "vesselName": "폐정맥",
+          "vesselType": "정맥 (폐 → 좌심방)",
+          "bloodType": "동맥혈 (산소 풍부)",
+          "color": "#E63946",
+          "oxygenSaturation": "98%",
+          "reason": "좌심방으로 들어오는 혈관이라 '폐정맥'이지만, 폐의 모세혈관에서 산소를 가득 흡수한 직후이므로 동맥혈이 흐릅니다."
+        }
+      ]
+    },
+    "quickCheckTable": [
+      {
+        "vessel": "대동맥",
+        "direction": "좌심실 → 온몸 (나감)",
+        "bloodType": "동맥혈",
+        "oxygen": "많음 (98%)",
+        "color": "#E63946",
+        "isException": false
+      },
+      {
+        "vessel": "폐동맥",
+        "direction": "우심실 → 폐 (나감)",
+        "bloodType": "정맥혈",
+        "oxygen": "적음 (75%)",
+        "color": "#457B9D",
+        "isException": true
+      },
+      {
+        "vessel": "대정맥",
+        "direction": "온몸 → 우심방 (들어옴)",
+        "bloodType": "정맥혈",
+        "oxygen": "적음 (75%)",
+        "color": "#457B9D",
+        "isException": false
+      },
+      {
+        "vessel": "폐정맥",
+        "direction": "폐 → 좌심방 (들어옴)",
+        "bloodType": "동맥혈",
+        "oxygen": "많음 (98%)",
+        "color": "#E63946",
+        "isException": true
+      }
+    ]
+  },
+  "microViews": {
+    "pulmonary_capillaries": {
+      "id": "pulmonary_capillaries",
+      "title": "폐포와 모세혈관의 기체 교환",
+      "subtitle": "폐순환 중 산소(O₂) 흡수 및 이산화탄소(CO₂) 방출 과정",
+      "diffusionPrinciple": "농도(분압) 차이에 의한 확산: 기체는 에너지 소모 없이 농도가 높은 쪽에서 낮은 쪽으로 한 겹의 얇은 막(폐포벽·모세혈관벽)을 통과해 이동합니다.",
+      "bloodTransition": {
+        "from": "venous",
+        "fromLabel": "정맥혈 (암적색)",
+        "fromColor": "#457B9D",
+        "to": "arterial",
+        "toLabel": "동맥혈 (선홍색)",
+        "toColor": "#E63946",
+        "oxygenSaturationChange": "75% → 98%"
+      },
+      "exchanges": [
+        {
+          "substance": "O₂ (산소)",
+          "from": "폐포 (고농도)",
+          "to": "모세혈관 내 적혈구 (헤모글로빈과 결합)",
+          "mechanism": "농도 차이에 의한 확산",
+          "direction": "alveolus_to_blood",
+          "color": "#E63946",
+          "description": "들숨으로 들어온 폐포 속 풍부한 산소가 모세혈관으로 확산되어 적혈구의 헤모글로빈과 결합합니다."
+        },
+        {
+          "substance": "CO₂ (이산화탄소)",
+          "from": "모세혈관 혈액 (고농도)",
+          "to": "폐포 (날숨으로 배출)",
+          "mechanism": "농도 차이에 의한 확산",
+          "direction": "blood_to_alveolus",
+          "color": "#457B9D",
+          "description": "혈액이 온몸에서 회수해 온 이산화탄소가 폐포로 확산되어 날숨을 통해 몸 밖으로 배출됩니다."
+        }
+      ],
+      "structures": [
+        {
+          "name": "폐포 (Alveolus)",
+          "role": "수많은 작은 공기 주머니로 표면적을 넓히고 높은 산소 농도를 유지합니다."
+        },
+        {
+          "name": "모세혈관벽 & 폐포벽",
+          "role": "각각 한 겹의 매우 얇은 세포층으로 되어 있어 기체가 빠르게 확산됩니다."
+        },
+        {
+          "name": "적혈구 (RBC)",
+          "role": "헤모글로빈이 산소와 결합하면서 암적색에서 선홍색으로 변합니다."
+        }
+      ],
+      "classroomQuestion": "폐포 속 산소는 어떻게 에너지(ATP)를 쓰지 않고도 모세혈관 속으로 들어갈 수 있을까요?"
+    },
+    "systemic_capillaries": {
+      "id": "systemic_capillaries",
+      "title": "조직세포와 모세혈관의 물질 교환",
+      "subtitle": "체순환 중 산소·영양소 공급 및 이산화탄소·노폐물 회수 과정",
+      "diffusionPrinciple": "농도 차이에 의한 확산 및 물질 교환: 혈액이 천천히 흐르는 동안 조직세포는 필요한 물질을 받고 불필요한 노폐물을 내보냅니다.",
+      "bloodTransition": {
+        "from": "arterial",
+        "fromLabel": "동맥혈 (선홍색)",
+        "fromColor": "#E63946",
+        "to": "venous",
+        "toLabel": "정맥혈 (암적색)",
+        "toColor": "#457B9D",
+        "oxygenSaturationChange": "98% → 75%"
+      },
+      "exchanges": [
+        {
+          "substance": "O₂ (산소)",
+          "from": "모세혈관 적혈구 (고농도)",
+          "to": "조직세포 (세포 호흡에 사용)",
+          "mechanism": "농도 차이에 의한 확산",
+          "direction": "blood_to_tissue",
+          "color": "#E63946",
+          "description": "적혈구의 헤모글로빈에서 떨어진 산소가 조직세포로 이동해 세포 호흡(에너지 생성)에 쓰입니다."
+        },
+        {
+          "substance": "영양소 (포도당 등)",
+          "from": "모세혈관 혈장",
+          "to": "조직세포 (에너지원·구성 성분)",
+          "mechanism": "물질 교환(확산 등)",
+          "direction": "blood_to_tissue",
+          "color": "#F4A261",
+          "description": "소화기관에서 흡수되어 혈장에 녹아 있던 포도당·아미노산 등이 조직세포로 전달됩니다."
+        },
+        {
+          "substance": "CO₂ (이산화탄소)",
+          "from": "조직세포 (세포 호흡 부산물)",
+          "to": "모세혈관 혈액",
+          "mechanism": "농도 차이에 의한 확산",
+          "direction": "tissue_to_blood",
+          "color": "#457B9D",
+          "description": "조직세포가 세포 호흡을 한 뒤 생성한 이산화탄소가 모세혈관으로 나와 폐로 운반됩니다."
+        },
+        {
+          "substance": "노폐물 (요소 등)",
+          "from": "조직세포 (대사 노폐물)",
+          "to": "모세혈관 혈장",
+          "mechanism": "물질 교환",
+          "direction": "tissue_to_blood",
+          "color": "#6C757D",
+          "description": "세포 활동으로 생긴 암모니아·요소 등 노폐물이 혈장으로 이동해 콩팥 등 배설 기관으로 운반됩니다."
+        }
+      ],
+      "structures": [
+        {
+          "name": "조직세포 (Tissue Cell)",
+          "role": "산소와 영양소를 이용해 생명 활동에 필요한 에너지를 만들고 이산화탄소와 노폐물을 생성합니다."
+        },
+        {
+          "name": "모세혈관벽",
+          "role": "한 겹의 세포층으로 되어 있고 혈류 속도가 매우 느려 물질이 쉽게 통과합니다."
+        },
+        {
+          "name": "적혈구 (RBC)",
+          "role": "산소를 조직세포에 내어주고 선홍색에서 암적색(정맥혈)으로 변합니다."
+        }
+      ],
+      "classroomQuestion": "조직세포가 활발히 활동할수록 모세혈관에서 조직세포로 더 많이 이동해야 하는 두 가지 물질은 무엇인가요?"
+    }
+  },
+  "quizzes": [
+    {
+      "id": "quiz_1",
+      "number": 1,
+      "type": "multiple_choice",
+      "category": "오개념 점검",
+      "question": "혈액의 순환 과정에서 '심장으로 들어오는 혈관(정맥)'이지만, 산소가 풍부한 '동맥혈'이 흐르는 혈관은 무엇인가요?",
+      "options": [
+        { "id": "aorta", "label": "대동맥" },
+        { "id": "pulmonary_artery", "label": "폐동맥" },
+        { "id": "vena_cava", "label": "대정맥" },
+        { "id": "pulmonary_vein", "label": "폐정맥" }
+      ],
+      "correctAnswer": "pulmonary_vein",
+      "explanation": "폐정맥은 폐의 모세혈관에서 산소(O₂)를 충분히 흡수한 직후 심장의 좌심방으로 들어오는 혈관입니다. 심장으로 들어오므로 이름은 '정맥'이지만, 산소 함량이 높은 선홍색 '동맥혈'이 흐릅니다. 반대로 폐동맥은 우심실에서 나가지만 산소를 받기 전이므로 '정맥혈'이 흐릅니다."
+    },
+    {
+      "id": "quiz_2",
+      "number": 2,
+      "type": "sequence_order",
+      "category": "폐순환 경로",
+      "question": "다음 5개의 구조를 클릭하여 올바른 [폐순환] 혈액 이동 순서대로 배열하세요.",
+      "options": [
+        { "id": "pulmonary_vein", "label": "폐정맥" },
+        { "id": "right_ventricle", "label": "우심실" },
+        { "id": "left_atrium", "label": "좌심방" },
+        { "id": "pulmonary_capillaries", "label": "폐의 모세혈관" },
+        { "id": "pulmonary_artery", "label": "폐동맥" }
+      ],
+      "correctSequence": [
+        "right_ventricle",
+        "pulmonary_artery",
+        "pulmonary_capillaries",
+        "pulmonary_vein",
+        "left_atrium"
+      ],
+      "explanation": "폐순환은 [우심실 → 폐동맥 → 폐의 모세혈관(기체 교환) → 폐정맥 → 좌심방] 순서로 진행됩니다. 폐의 모세혈관에서 이산화탄소를 내보내고 산소를 받아 정맥혈이 동맥혈로 바뀝니다."
+    },
+    {
+      "id": "quiz_3",
+      "number": 3,
+      "type": "multiple_choice",
+      "category": "심장의 구조",
+      "question": "심장의 4개 방 중 근육벽이 가장 두꺼우며, 대동맥과 직접 연결되어 온몸으로 혈액을 강하게 내보내는 곳은 어디인가요?",
+      "options": [
+        { "id": "right_atrium", "label": "우심방" },
+        { "id": "right_ventricle", "label": "우심실" },
+        { "id": "left_atrium", "label": "좌심방" },
+        { "id": "left_ventricle", "label": "좌심실" }
+      ],
+      "correctAnswer": "left_ventricle",
+      "explanation": "좌심실은 머리끝부터 발끝까지 온몸의 모든 조직에 혈액을 공급해야 하므로 가장 강한 압력을 만들어야 합니다. 따라서 심장의 4개 방 중 근육벽이 가장 두껍고(우심실의 약 3배), 대동맥 판막을 통해 대동맥과 연결되어 있습니다."
+    },
+    {
+      "id": "quiz_4",
+      "number": 4,
+      "type": "multiple_choice",
+      "category": "모세혈관 물질 교환",
+      "question": "체순환 중 '온몸의 모세혈관'과 '조직세포' 사이에서 일어나는 물질 교환에 대한 설명으로 옳은 것은?",
+      "options": [
+        { "id": "opt1", "label": "조직세포에서 모세혈관으로 산소(O₂)와 영양소가 이동한다." },
+        { "id": "opt2", "label": "모세혈관에서 조직세포로 이산화탄소(CO₂)와 노폐물이 이동한다." },
+        { "id": "opt3", "label": "모세혈관에서 조직세포로 산소와 영양소가 이동하고, 정맥혈이 된다." },
+        { "id": "opt4", "label": "기체 교환만 일어나며 정맥혈이 선홍색 동맥혈로 바뀐다." }
+      ],
+      "correctAnswer": "opt3",
+      "explanation": "온몸의 모세혈관에서는 세포 호흡에 필요한 산소(O₂)와 영양소가 모세혈관에서 조직세포로 공급되고, 세포 호흡 결과 생긴 이산화탄소(CO₂)와 노폐물이 조직세포에서 모세혈관으로 회수됩니다. 그 결과 동맥혈이 정맥혈로 변합니다."
+    },
+    {
+      "id": "quiz_5",
+      "number": 5,
+      "type": "sequence_order",
+      "category": "체순환 경로",
+      "question": "다음 5개의 구조를 클릭하여 올바른 [체순환(온몸 순환)] 혈액 이동 순서대로 배열하세요.",
+      "options": [
+        { "id": "vena_cava", "label": "대정맥" },
+        { "id": "left_ventricle", "label": "좌심실" },
+        { "id": "systemic_capillaries", "label": "온몸의 모세혈관" },
+        { "id": "right_atrium", "label": "우심방" },
+        { "id": "aorta", "label": "대동맥" }
+      ],
+      "correctSequence": [
+        "left_ventricle",
+        "aorta",
+        "systemic_capillaries",
+        "vena_cava",
+        "right_atrium"
+      ],
+      "explanation": "체순환은 [좌심실 → 대동맥 → 온몸의 모세혈관(물질 교환) → 대정맥 → 우심방] 순서로 진행됩니다. 혈액은 심방 → 심실 → 동맥 → 모세혈관 → 정맥 → 심방의 한 방향으로만 순환하며 판막이 역류를 막아줍니다."
+    }
+  ]
+}
